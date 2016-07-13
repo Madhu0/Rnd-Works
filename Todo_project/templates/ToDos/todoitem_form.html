@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ceate Item</title>
+</head>
+<body>
+<h1>Enter the following details</h1>
+<table>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <br>
+        <br>
+        <input type="submit" value="create"/>
+    </form>
+</table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello tOdO</title>
+</head>
+<body>
+    <h1>TodoLists</h1>
+    <h2>{{ list }}</h2>
+    <table border="3">
+        <tr>
+            <th>Description</th>
+            <th>Due_date</th>
+            <th>completed</th>
+        </tr>
+        {% for i in list.todoitem_set.all %}
+            <tr>
+            <td>{{ i.description }}</td>
+                <td>{{ i.due_date }}</td>
+            <td>{{ i.completed }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lists</title>
+    {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/jQuery.min.js' %}"></script>
+    <script src={% static 'js/npm.js' %}></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body bgcolor="#ffe4c4">
+<h1>Todo Lists</h1>
+<table class="table table-bordered table-hover">
+<tr>
+    <th>Name</th>
+    <th>Id</th>
+    <th>Date Created</th>
+</tr>
+    {% for i in object_list %}
+        <tr>
+        <td><a href="listitem/{{ i.id }}">{{ i.name }}</a><td>{{ i.id }}</td><td>{{ i.created }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

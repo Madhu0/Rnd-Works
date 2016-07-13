@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Items</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/jQuery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+    <h1>Todo Items</h1>
+    <table class="table table-bordered table-hover">
+    <tr>
+       <th>Description</th>
+        <th>Due Date</th>
+        <th>Completed</th>
+        <th>List_id</th>
+    </tr>
+            {% for i in items %}
+                <tr>
+                <td>{{  i.description}}</td>
+                <td>{{ i.due_date }}</td>
+                <td><input class="btn btn-info btn-lg" type="checkbox" data-target="#myModal" data-toggle="modal"></td>
+                <td>{{ i.list }}</td>
+                </tr>
+            {% endfor %}
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Confirmation</h4>
+        </div>
+        <div class="modal-body">
+          <p>Do you really want to change it???.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </table>
+</body>
+</html>
